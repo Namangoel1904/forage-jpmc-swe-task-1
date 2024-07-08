@@ -1,5 +1,6 @@
 import unittest
 from client3 import getDataPoint
+from client3 import getRatio
 
 class ClientTest(unittest.TestCase):
   def test_getDataPoint_calculatePrice(self):
@@ -18,6 +19,14 @@ class ClientTest(unittest.TestCase):
 
 
   """ ------------ Add more unit tests ------------ """
+class TestGetRatio(unittest.TestCase):
+      def test_zero_numerator(self):
+            self.assertEqual(getRatio(0, 5), 0)
+
+      def test_negative_numbers(self):
+            self.assertEqual(getRatio(-10, 2), -5)
+            self.assertEqual(getRatio(10, -2), -5)
+            self.assertEqual(getRatio(-10, -2), 5)
 
 
 
